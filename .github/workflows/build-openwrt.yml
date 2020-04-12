@@ -60,7 +60,20 @@ jobs:
         sudo -E apt-get -q purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php*
         sudo -E apt-get -qq autoremove --purge
         sudo -E apt-get -qq clean
+        
+    - name: sync the lede source
+      run: |
+        git remote add openwrt https://github.com/coolsnowwolf/lede.git
+        git pull openwrt master
+        git remote -v
 
+    - name: get the gnb package
+      run: |
+       cd package
+       mkdir gnb
+       cd gnb
+       git clone https://github.com/carrot93/gnb/gnb.git
+       
     - name: Clone source code
       run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
 
