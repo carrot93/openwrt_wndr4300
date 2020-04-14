@@ -65,13 +65,13 @@ jobs:
       run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
  
     - name: sync the lede source
-      run:|
+      run: |
         git remote add openwrt https://github.com/coolsnowwolf/lede.git
         git pull openwrt master
         git remote -v
 
     - name: get the gnb package
-      run:|
+      run: |
        cd openwrt/package
        mkdir gnb
        cd gnb
