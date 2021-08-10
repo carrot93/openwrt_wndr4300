@@ -113,7 +113,7 @@ jobs:
       if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
       run: |
                 echo "::set-output name=FIRMWARE::$PWD"
-        echo "::set-output name=status::success"
+                echo "::set-output name=status::success"
 
     - name: Upload firmware directory
       uses: actions/upload-artifact@main
