@@ -10,13 +10,23 @@
 name: wndr4300_v1_128m
 
 on:
+  repository_dispatch:
+  workflow_dispatch:
   push:
     branches: 
       - main
+    paths:
+      - "wndr4300.config"
   # schedule:
   #   - cron: 0 20 * * *
   release:
-    types: [published]
+    types: published
+  watch:
+    types: started
+    
+env:
+  REPO_URL: https://github.com/coolsnowwolf/lede
+  CONFIG_FILE: wndr4300.config
 
 jobs:
 
