@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
   push:
     branches: 
-      - main
+      - master
     paths:
       - "wndr4300.config"
   # schedule:
