@@ -72,7 +72,7 @@ jobs:
           git clone --depth=1 https://github.com/fumiama/openwrt-packages.git ./package/useful
           git clone --depth=1 https://github.com/fumiama/opackages.git ./package/fumiama
           git clone --depth=1 https://github.com/fumiama/openwrt-upx.git ./package/fumiama/upx
-          git clone --depth=1 https://github.com/john-shime/luci-theme-darkmatter.git ./package/fumiama/luci-theme-darkmetter
+          git clone --depth=1 https://github.com/john-shine/luci-theme-darkmatter.git ./package/fumiama/luci-theme-darkmetter
 
       - name: Update feeds
         run: |
