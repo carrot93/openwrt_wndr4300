@@ -75,8 +75,8 @@ jobs:
         cd openwrt
         # custom package source
         cat >> feeds.conf.default <<EOF
-        src-git packages https://github.com/openwrt/packages
-        src-git luci https://github.com/openwrt/luci
+        src-git packages_1 https://github.com/openwrt/packages
+        src-git luci_1 https://github.com/openwrt/luci
         EOF
         ../$DIY_P1_SH
 
