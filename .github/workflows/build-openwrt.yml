@@ -105,9 +105,14 @@ jobs:
       run: |
         cd openwrt
         # make savedefconfig
-        ./scripts/diffconfig.sh > configdiff
-        cat configdiff >> .config
+        # ./scripts/diffconfig.sh > configdiff
+        # cat configdiff >> .config
         make defconfig
+        cat >> .config <<EOF
+        CONFIG_PACKAGE_luci-app-mwan3 = y
+        CONFIG_PACKAGE_luci-app-mwan3helper = y
+        CONFIG_PACKAGE_mwan3 = y
+        EOF
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
