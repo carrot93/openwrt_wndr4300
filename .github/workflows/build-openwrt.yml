@@ -74,10 +74,10 @@ jobs:
         chmod +x $DIY_P1_SH
         cd openwrt
         # custom package source
-        cat >> feeds.conf.default <<EOF
-        src-git packages_1 https://github.com/openwrt/packages
-        src-git luci_1 https://github.com/openwrt/luci
-        EOF
+        # cat >> feeds.conf.default <<EOF
+        # src-git packages_1 https://github.com/openwrt/packages
+        # src-git luci_1 https://github.com/openwrt/luci
+        # EOF
         ../$DIY_P1_SH
 
     - name: Update feeds
@@ -111,8 +111,10 @@ jobs:
         cat >> .config <<EOF
         CONFIG_PACKAGE_luci-app-mwan3 = y
         CONFIG_PACKAGE_luci-app-mwan3helper = y
+        CONFIG_PACKAGE_luci-i18n-mwan3-zh-cn= y
         CONFIG_PACKAGE_mwan3 = y
         CONFIG_PACKAGE_luci-app-p910nd = y
+        CONFIG_PACKAGE_luci-i18n-p910nd-zh-cn = y
         CONFIG_PACKAGE_p910nd = y
         CONFIG_PACKAGE_v2ray-plugin = y
         CONFIG_PACKAGE_v2ray-core = y
