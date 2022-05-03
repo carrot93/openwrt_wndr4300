@@ -106,9 +106,8 @@ jobs:
         cd openwrt
         # make savedefconfig
         ./scripts/diffconfig.sh > configdiff
-        cp configdiff .config
+        cat configdiff >> .config
         make defconfig
-        make oldconfig
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
