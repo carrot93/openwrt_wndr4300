@@ -119,6 +119,9 @@ jobs:
         CONFIG_PACKAGE_v2ray-plugin = y
         CONFIG_PACKAGE_v2ray-core = y
         CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray_Plugin = y
+        CONFIG_BUSYBOX_DEFAULT_KLOGD = y
+        CONFIG_BUSYBOX_DEFAULT_FEATURE_KLOGD_KLOGCTL =y
+        CONFIG_BUSYBOX_DEFAULT_LOGGER=y
         EOF
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
