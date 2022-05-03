@@ -112,6 +112,11 @@ jobs:
         CONFIG_PACKAGE_luci-app-mwan3 = y
         CONFIG_PACKAGE_luci-app-mwan3helper = y
         CONFIG_PACKAGE_mwan3 = y
+        CONFIG_PACKAGE_luci-app-p910nd = y
+        CONFIG_PACKAGE_p910nd = y
+        CONFIG_PACKAGE_v2ray-plugin = y
+        CONFIG_PACKAGE_v2ray-core = y
+        CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray_Plugin = y
         EOF
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
