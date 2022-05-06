@@ -1,3 +1,13 @@
+# About custom firmware: （关于本固件）
+
+lan ip: 10.0.0.1
+username/password: root/password
+
+包含基础的包，其它包和i18n包可以直接opkg安装。
+
+
+
+
 # Actions-Lean-OpenWrt
 
 - `master`是[Lean's OpenWrt source](https://github.com/coolsnowwolf/lede)编译，分支`Lienol-openwrt`是[Lienol's openwrt source](https://github.com/Lienol/openwrt)编译。  
