@@ -94,6 +94,7 @@ jobs:
         cd openwrt
         # git clone https://github.com/openwrt/packages/net/mwan3 package/mwan3
         # git clone https://github.com/openwrt/luci/application/luci-app-mwan3 package/luci-app-mwan3
+        git clone https://github.com/honwen/openwrt-shadowsocks-rust.git package/shadowsocks-rust
         ../$DIY_P2_SH
 
     - name: SSH connection to Actions
@@ -122,6 +123,8 @@ jobs:
         CONFIG_BUSYBOX_DEFAULT_KLOGD = y
         CONFIG_BUSYBOX_DEFAULT_FEATURE_KLOGD_KLOGCTL =y
         CONFIG_BUSYBOX_DEFAULT_LOGGER=y
+        CONFIG_PACKAGE_shadowsocks-rust = y
+        CONFIG_PACKAGE_luci-app-shadowsocks = y
         EOF
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
