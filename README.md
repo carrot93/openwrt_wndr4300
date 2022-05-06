@@ -1,9 +1,9 @@
 # About custom firmware: （关于本固件）
 
-lan ip: 10.0.0.1
-username/password: root/password
-
-包含基础的包，其它包和i18n包可以直接opkg安装。
+- lan ip: 10.0.0.1
+- username/password: root/password
+- current kernel version: 5.10.112
+- 包含基础的包，其它包和i18n包可以直接opkg安装。
 
 
 
