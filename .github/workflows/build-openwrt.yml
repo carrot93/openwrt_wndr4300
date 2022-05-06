@@ -78,6 +78,7 @@ jobs:
         # src-git packages_1 https://github.com/openwrt/packages
         # src-git luci_1 https://github.com/openwrt/luci
         # EOF
+        git clone https://github.com/honwen/openwrt-shadowsocks-rust.git package/shadowsocks-rust
         ../$DIY_P1_SH
 
     - name: Update feeds
@@ -92,9 +93,6 @@ jobs:
         [ -e $CONFIG_FILE ] && mv -f $CONFIG_FILE openwrt/.config
         chmod +x $DIY_P2_SH
         cd openwrt
-        # git clone https://github.com/openwrt/packages/net/mwan3 package/mwan3
-        # git clone https://github.com/openwrt/luci/application/luci-app-mwan3 package/luci-app-mwan3
-        git clone https://github.com/honwen/openwrt-shadowsocks-rust.git package/shadowsocks-rust
         ../$DIY_P2_SH
 
     - name: SSH connection to Actions
