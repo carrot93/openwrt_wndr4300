@@ -79,6 +79,7 @@ jobs:
         # src-git luci_1 https://github.com/openwrt/luci
         # EOF
         git clone https://github.com/honwen/openwrt-shadowsocks-rust.git package/shadowsocks-rust
+        git clone https://github.com/honwen/luci-app-shadowsocks-rust.git package/luci-app-shadowsocks-rust
         ../$DIY_P1_SH
 
     - name: Update feeds
