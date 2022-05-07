@@ -79,7 +79,7 @@ jobs:
         # src-git luci_1 https://github.com/openwrt/luci
         # EOF
         git clone https://github.com/honwen/openwrt-shadowsocks-rust.git package/shadowsocks-rust
-        git clone https://github.com/honwen/luci-app-shadowsocks-rust.git package/luci-app-shadowsocks-rust
+        git clone https://github.com/honwen/luci-app-shadowsocks-rust.git feeds/luci/applications/luci-app-shadowsocks-rust
         ../$DIY_P1_SH
 
     - name: Update feeds
@@ -124,6 +124,7 @@ jobs:
         CONFIG_BUSYBOX_DEFAULT_LOGGER=y
         CONFIG_PACKAGE_shadowsocks-rust = y
         CONFIG_PACKAGE_luci-app-shadowsocks = y
+        CONFIG_PACKAGE_luci-app-shadowsocks-rust=y
         EOF
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
