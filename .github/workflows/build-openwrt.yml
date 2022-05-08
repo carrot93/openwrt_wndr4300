@@ -79,7 +79,7 @@ jobs:
         # src-git luci_1 https://github.com/openwrt/luci
         # EOF
         git clone https://github.com/honwen/openwrt-shadowsocks-rust.git package/shadowsocks-rust
-        git clone https://github.com/honwen/luci-app-shadowsocks-rust.git package/luci/luci-app-shadowsocks-rust
+        git clone https://github.com/honwen/luci-app-shadowsocks-rust.git package/luci-app-shadowsocks-rust
         ../$DIY_P1_SH
 
     - name: Update feeds
@@ -105,8 +105,8 @@ jobs:
       run: |
         cd openwrt
         # make savedefconfig
-        # ./scripts/diffconfig.sh > configdiff
-        # cat configdiff >> .config
+        ./scripts/diffconfig.sh > defconfig
+        cat defconfig >> .config
         make defconfig
         cat >> .config <<EOF
         CONFIG_PACKAGE_luci-app-mwan3 = y
@@ -123,7 +123,6 @@ jobs:
         CONFIG_BUSYBOX_DEFAULT_FEATURE_KLOGD_KLOGCTL =y
         CONFIG_BUSYBOX_DEFAULT_LOGGER=y
         CONFIG_PACKAGE_shadowsocks-rust = y
-        # CONFIG_PACKAGE_luci-app-shadowsocks = y
         CONFIG_PACKAGE_luci-app-shadowsocks-rust=y
         EOF
         make download -j8
