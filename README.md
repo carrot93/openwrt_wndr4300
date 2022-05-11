@@ -5,7 +5,9 @@
 - current kernel version: 5.10.112
 - 包含基础的包，其它包和i18n包可以直接opkg安装。
 
+# exception handling：（异常状况处理）
 
+- Downgrade: 降级：当刷新固件失败，需要降级固件时，可能遇到降级失败，需要选择一个完备的版本进行刷机。
 
 
 # Actions-Lean-OpenWrt
