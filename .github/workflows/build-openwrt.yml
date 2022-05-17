@@ -78,6 +78,7 @@ jobs:
         # src-git packages_1 https://github.com/openwrt/packages
         # src-git luci_1 https://github.com/openwrt/luci
         # EOF
+        git clone https://github.com/chenhw2/openwrt-dnsmasq-extra.git package/openwrt-dnsmasq-extra
         git clone https://github.com/honwen/openwrt-shadowsocks-rust.git package/openwrt-shadowsocks-rust
         git clone https://github.com/honwen/luci-app-shadowsocks-rust.git package/luci-app-shadowsocks-rust
         pushd package/luci-app-shadowsocks-rust/tools/po2lmo
@@ -125,8 +126,9 @@ jobs:
         CONFIG_BUSYBOX_DEFAULT_KLOGD = y
         CONFIG_BUSYBOX_DEFAULT_FEATURE_KLOGD_KLOGCTL =y
         CONFIG_BUSYBOX_DEFAULT_LOGGER=y
-        CONFIG_PACKAGE_shadowsocks-rust = y
+        CONFIG_PACKAGE_openwrt-shadowsocks-rust = y
         CONFIG_PACKAGE_luci-app-shadowsocks-rust=y
+        CONFIG_PACKAGE_openwrt-dnsmasq-extra=y
         EOF
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
