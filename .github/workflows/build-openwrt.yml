@@ -111,7 +111,7 @@ jobs:
         # make savedefconfig
         # ./scripts/diffconfig.sh > defconfig
         # cat defconfig >> .config
-        make defconfig
+        sed -i 's/^[ \t]*//g' ./.config
         cat >> .config <<EOF
         CONFIG_PACKAGE_luci-app-mwan3 = y
         CONFIG_PACKAGE_luci-app-mwan3helper = y
@@ -131,6 +131,7 @@ jobs:
         CONFIG_PACKAGE_shadowsocks-rust-sslocal=y
         CONFIG_PACKAGE_shadowsocks-rust-ssserver=y
         EOF
+        make defconfig
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
