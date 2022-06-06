@@ -131,6 +131,7 @@ jobs:
         CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Rust_Server=y
         CONFIG_PACKAGE_shadowsocks-rust-sslocal=y
         CONFIG_PACKAGE_shadowsocks-rust-ssserver=y
+        CONFIG_PACKAGE_openflow=y
         EOF
         make defconfig
         make download -j8
