@@ -78,6 +78,7 @@ jobs:
         # src-git packages_1 https://github.com/openwrt/packages
         # src-git luci_1 https://github.com/openwrt/luci
         # EOF
+        git clone https://github.com/CPqD/openflow-openwrt.git package/openflow-openwrt
         git clone https://github.com/chenhw2/openwrt-dnsmasq-extra.git package/openwrt-dnsmasq-extra
         git clone https://github.com/honwen/openwrt-shadowsocks-rust.git package/openwrt-shadowsocks-rust
         git clone https://github.com/honwen/luci-app-shadowsocks-rust.git package/luci-app-shadowsocks-rust
