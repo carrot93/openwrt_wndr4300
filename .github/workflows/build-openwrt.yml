@@ -80,13 +80,13 @@ jobs:
         # src-git luci_1 https://github.com/openwrt/luci
         # EOF
         # git clone https://github.com/CPqD/openflow-openwrt.git package/openflow-openwrt
-        git clone https://github.com/sunkai2012sky/mwan3-zh-cn.git package/luci-i18n-mwan3
-        git clone https://github.com/chenhw2/openwrt-dnsmasq-extra.git package/openwrt-dnsmasq-extra
-        git clone https://github.com/honwen/openwrt-shadowsocks-rust.git package/openwrt-shadowsocks-rust
-        git clone https://github.com/honwen/luci-app-shadowsocks-rust.git package/luci-app-shadowsocks-rust
-        pushd package/luci-app-shadowsocks-rust/tools/po2lmo
-        make && sudo make install
-        popd
+        # git clone https://github.com/sunkai2012sky/mwan3-zh-cn.git package/luci-i18n-mwan3
+        # git clone https://github.com/chenhw2/openwrt-dnsmasq-extra.git package/openwrt-dnsmasq-extra
+        # git clone https://github.com/honwen/openwrt-shadowsocks-rust.git package/openwrt-shadowsocks-rust
+        # git clone https://github.com/honwen/luci-app-shadowsocks-rust.git package/luci-app-shadowsocks-rust
+        # pushd package/luci-app-shadowsocks-rust/tools/po2lmo
+        # make && sudo make install
+        # popd
         ../$DIY_P1_SH
 
     - name: Update feeds
@@ -122,17 +122,17 @@ jobs:
         CONFIG_PACKAGE_luci-app-p910nd=y
         CONFIG_PACKAGE_luci-i18n-p910nd-zh-cn=y
         CONFIG_PACKAGE_p910nd=y
-        CONFIG_PACKAGE_v2ray-plugin=y
-        CONFIG_PACKAGE_v2ray-core=y
         CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray_Plugin=y
         CONFIG_BUSYBOX_DEFAULT_KLOGD=y
         CONFIG_BUSYBOX_DEFAULT_FEATURE_KLOGD_KLOGCTL=y
         CONFIG_BUSYBOX_DEFAULT_LOGGER=y
-        CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Rust_Client=y
-        CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Rust_Server=y
-        CONFIG_PACKAGE_shadowsocks-rust-sslocal=y
-        CONFIG_PACKAGE_shadowsocks-rust-ssserver=y
         EOF
+        # CONFIG_PACKAGE_shadowsocks-rust-sslocal=y
+        # CONFIG_PACKAGE_shadowsocks-rust-ssserver=y
+        # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Rust_Client=y
+        # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Rust_Server=y
+        # CONFIG_PACKAGE_v2ray-plugin=y
+        # CONFIG_PACKAGE_v2ray-core=y
         # CONFIG_PACKAGE_openflow=y
         # CONFIG_PACKAGE_luci-i18n-mwan3-zh-cn=y
         make defconfig
