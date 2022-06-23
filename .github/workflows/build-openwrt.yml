@@ -116,17 +116,17 @@ jobs:
         # cat defconfig >> .config
         sed -i 's/^[ \t]*//g' ./.config
         cat >> .config <<EOF
-        CONFIG_PACKAGE_luci-app-mwan3 = y
-        CONFIG_PACKAGE_luci-app-mwan3helper = y
-        CONFIG_PACKAGE_mwan3 = y
-        CONFIG_PACKAGE_luci-app-p910nd = y
-        CONFIG_PACKAGE_luci-i18n-p910nd-zh-cn = y
-        CONFIG_PACKAGE_p910nd = y
-        CONFIG_PACKAGE_v2ray-plugin = y
-        CONFIG_PACKAGE_v2ray-core = y
-        CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray_Plugin = y
-        CONFIG_BUSYBOX_DEFAULT_KLOGD = y
-        CONFIG_BUSYBOX_DEFAULT_FEATURE_KLOGD_KLOGCTL =y
+        CONFIG_PACKAGE_luci-app-mwan3=y
+        CONFIG_PACKAGE_luci-app-mwan3helper=y
+        CONFIG_PACKAGE_mwan3=y
+        CONFIG_PACKAGE_luci-app-p910nd=y
+        CONFIG_PACKAGE_luci-i18n-p910nd-zh-cn=y
+        CONFIG_PACKAGE_p910nd=y
+        CONFIG_PACKAGE_v2ray-plugin=y
+        CONFIG_PACKAGE_v2ray-core=y
+        CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray_Plugin=y
+        CONFIG_BUSYBOX_DEFAULT_KLOGD=y
+        CONFIG_BUSYBOX_DEFAULT_FEATURE_KLOGD_KLOGCTL=y
         CONFIG_BUSYBOX_DEFAULT_LOGGER=y
         CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Rust_Client=y
         CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Rust_Server=y
@@ -134,7 +134,7 @@ jobs:
         CONFIG_PACKAGE_shadowsocks-rust-ssserver=y
         EOF
         # CONFIG_PACKAGE_openflow=y
-        # CONFIG_PACKAGE_luci-i18n-mwan3-zh-cn= y
+        # CONFIG_PACKAGE_luci-i18n-mwan3-zh-cn=y
         make defconfig
         ./scripts/diffconfig.sh > seed.config
         make download -j8 V=s
