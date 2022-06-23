@@ -137,6 +137,7 @@ jobs:
         # CONFIG_PACKAGE_openflow=y
         # CONFIG_PACKAGE_luci-i18n-mwan3-zh-cn= y
         make defconfig
+        ./scripts/diffconfig.sh > seed.config
         make download -j8 V=s
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
