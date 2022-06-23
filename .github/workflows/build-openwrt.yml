@@ -78,7 +78,7 @@ jobs:
         # src-git packages_1 https://github.com/openwrt/packages
         # src-git luci_1 https://github.com/openwrt/luci
         # EOF
-        git clone https://github.com/CPqD/openflow-openwrt.git package/openflow-openwrt
+        # git clone https://github.com/CPqD/openflow-openwrt.git package/openflow-openwrt
         git clone https://github.com/sunkai2012sky/mwan3-zh-cn.git package/luci-i18n-mwan3
         git clone https://github.com/chenhw2/openwrt-dnsmasq-extra.git package/openwrt-dnsmasq-extra
         git clone https://github.com/honwen/openwrt-shadowsocks-rust.git package/openwrt-shadowsocks-rust
@@ -113,6 +113,7 @@ jobs:
         # make savedefconfig
         # ./scripts/diffconfig.sh > defconfig
         # cat defconfig >> .config
+        make defconfig
         sed -i 's/^[ \t]*//g' ./.config
         cat >> .config <<EOF
         CONFIG_PACKAGE_luci-app-mwan3 = y
@@ -132,9 +133,8 @@ jobs:
         CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Rust_Server=y
         CONFIG_PACKAGE_shadowsocks-rust-sslocal=y
         CONFIG_PACKAGE_shadowsocks-rust-ssserver=y
-        CONFIG_PACKAGE_openflow=y
         EOF
-        make defconfig
+        # CONFIG_PACKAGE_openflow=y
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
