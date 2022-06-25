@@ -137,7 +137,8 @@ jobs:
         # CONFIG_PACKAGE_luci-i18n-mwan3-zh-cn=y
         make defconfig
         ./scripts/diffconfig.sh > seed.config
-        make download -j8 V=s
+        make download -j8 
+        # V=s
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 
@@ -146,7 +147,8 @@ jobs:
       run: |
         cd openwrt
         echo -e "$(nproc) thread compile"
-        make -j$(nproc) || make -j1 || make -j1 V=s PKG_HASH=skip
+        make -j$(nproc) || make -j1 || make -j1 V=s 
+        # PKG_HASH=skip
         echo "::set-output name=status::success"
 
     - name: Upload bin directory
