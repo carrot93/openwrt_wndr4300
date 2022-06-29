@@ -88,8 +88,8 @@ jobs:
         # make && sudo make install
         # popd
         git clone https://github.com/pymumu/luci-app-smartdns.git  package/luci-app-smartdns
-        git clone https://github.com/AlexZhuo/luci-app-pdnsd.git package/luci-app-pdnsd
-        git clone https://github.com/mengskysama/openwrt-pdnsd.git package/pdnsd 
+        # git clone https://github.com/AlexZhuo/luci-app-pdnsd.git package/luci-app-pdnsd
+        # git clone https://github.com/mengskysama/openwrt-pdnsd.git package/openwrt-pdnsd 
         ../$DIY_P1_SH
 
     - name: Update feeds
@@ -118,9 +118,9 @@ jobs:
         # ./scripts/diffconfig.sh > defconfig
         # cat defconfig >> .config
         sed -i 's/^[ \t]*//g' ./.config
-        cat >> .config <<EOF
-        CONFIG_PACKAGE_pdnsd=y
-        EOF
+        # cat >> .config <<EOF
+        # CONFIG_PACKAGE_pdnsd=y
+        # EOF
         # CONFIG_PACKAGE_luci-app-mwan3=y
         # CONFIG_PACKAGE_mwan3=y
         # CONFIG_PACKAGE_luci-app-p910nd=y
