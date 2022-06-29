@@ -87,6 +87,7 @@ jobs:
         # pushd package/luci-app-shadowsocks-rust/tools/po2lmo
         # make && sudo make install
         # popd
+        git clone https://github.com/pymumu/luci-app-smartdns.git  package/luci-app-smartdns
         ../$DIY_P1_SH
 
     - name: Update feeds
