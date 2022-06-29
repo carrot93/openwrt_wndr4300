@@ -88,8 +88,8 @@ jobs:
         # make && sudo make install
         # popd
         git clone https://github.com/pymumu/luci-app-smartdns.git  package/luci-app-smartdns
-        git clone https://github.com/AlexZhuo/luci-app-pdnsd package/luci-app-pdnsd
-        git clone https://github.com/Hill-98/openwrt-pdnsd package/pdnsd 
+        git clone https://github.com/AlexZhuo/luci-app-pdnsd.git package/luci-app-pdnsd
+        git clone https://github.com/Hill-98/openwrt-pdnsd.git package/pdnsd 
         ../$DIY_P1_SH
 
     - name: Update feeds
