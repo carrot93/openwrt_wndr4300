@@ -89,6 +89,7 @@ jobs:
         # popd
         git clone https://github.com/pymumu/luci-app-smartdns.git  package/luci-app-smartdns
         git clone https://github.com/AlexZhuo/luci-app-pdnsd package/luci-app-pdnsd
+        git clone https://github.com/Hill-98/openwrt-pdnsd package/pdnsd 
         ../$DIY_P1_SH
 
     - name: Update feeds
@@ -117,7 +118,9 @@ jobs:
         # ./scripts/diffconfig.sh > defconfig
         # cat defconfig >> .config
         sed -i 's/^[ \t]*//g' ./.config
-        # cat >> .config <<EOF
+        cat >> .config <<EOF
+        CONFIG_PACKAGE_pdnsd=y
+        EOF
         # CONFIG_PACKAGE_luci-app-mwan3=y
         # CONFIG_PACKAGE_mwan3=y
         # CONFIG_PACKAGE_luci-app-p910nd=y
@@ -125,7 +128,6 @@ jobs:
         # CONFIG_PACKAGE_p910nd=y
         # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray_Plugin=y
         # CONFIG_BUSYBOX_DEFAULT_KLOGD=y
-        # EOF
         # CONFIG_PACKAGE_luci-app-mwan3helper=y
         # CONFIG_BUSYBOX_DEFAULT_FEATURE_KLOGD_KLOGCTL=y
         # CONFIG_BUSYBOX_DEFAULT_LOGGER=y
