@@ -89,8 +89,8 @@ jobs:
         # popd
         git clone https://github.com/pymumu/luci-app-smartdns.git  package/luci-app-smartdns
         git clone https://github.com/pymumu/openwrt-smartdns.git package/openwrt-smartdns
-        git clone https://github.com/kankankankankankan/luci-app-adguardhome package/luci-app-adguardhome
-        git clone https://github.com/AdguardTeam/AdGuardHome package/AdGuardHome
+        # git clone https://github.com/kankankankankankan/luci-app-adguardhome package/luci-app-adguardhome
+        # git clone https://github.com/AdguardTeam/AdGuardHome package/AdGuardHome
         # git clone https://github.com/AlexZhuo/luci-app-pdnsd.git package/luci-app-pdnsd
         # git clone https://github.com/mengskysama/openwrt-pdnsd.git package/openwrt-pdnsd 
         ../$DIY_P1_SH
