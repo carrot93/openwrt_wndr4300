@@ -88,8 +88,8 @@ jobs:
         # pushd package/luci-app-shadowsocks-rust/tools/po2lmo
         # make && sudo make install
         # popd
-        # git clone https://github.com/pymumu/luci-app-smartdns.git  package/luci-app-smartdns
-        # git clone https://github.com/pymumu/openwrt-smartdns.git package/openwrt-smartdns
+        git clone https://github.com/pymumu/luci-app-smartdns.git  package/luci-app-smartdns
+        git clone https://github.com/pymumu/openwrt-smartdns.git package/openwrt-smartdns
         git clone https://github.com/kankankankankankan/luci-app-adguardhome package/luci-app-adguardhome
         git clone https://github.com/AdguardTeam/AdGuardHome package/AdGuardHome
         # git clone https://github.com/AlexZhuo/luci-app-pdnsd.git package/luci-app-pdnsd
@@ -157,7 +157,8 @@ jobs:
       run: |
         cd openwrt
         echo -e "$(nproc) thread compile"
-        make -j$(nproc) V=s || make -j1 V=s || make -j1 V=sc
+        # make -j$(nproc) V=s || make -j1 V=s || make -j1 V=sc
+        make -j$(nproc) || make -j1  || make -j1 V=sc
         # PKG_HASH=skip
         echo "::set-output name=status::success"
 
