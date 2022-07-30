@@ -2,7 +2,7 @@
 
 - lan ip: 10.0.0.1
 - username/password: root/password
-- current kernel version: 5.10.112
+- current kernel version: 5.10.133
 - 包含基础的包，其它包和i18n包可以直接opkg安装。
 -  本固件为测试验证版，大概率存在各种问题，请注意更新文档。
 
