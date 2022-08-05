@@ -120,6 +120,7 @@ jobs:
       id: package
       run: |
         cd openwrt
+        make clean
         # make savedefconfig
         # ./scripts/diffconfig.sh > defconfig
         # cat defconfig >> .config
