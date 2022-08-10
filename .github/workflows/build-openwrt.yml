@@ -148,6 +148,7 @@ jobs:
         # CONFIG_PACKAGE_luci-i18n-mwan3-zh-cn=y
         make defconfig
         ./scripts/diffconfig.sh > seed.config
+        sed -i 's/KERNEL_PATCHVER:=5.10/KERNEL_PATCHVER:=5.15/g' ./target/linux/ath79/Makefile
         make download -j8 
         # V=s
         find dl -size -1024c -exec ls -l {} \;
