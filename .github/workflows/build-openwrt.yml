@@ -56,9 +56,11 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@main
+      with:
+                 node-version: 16
     - name: setup node version
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@main
       with:
                  node-version: 16
 
@@ -122,6 +124,9 @@ jobs:
 
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
+      with:
+                 node-version: 16
+
       if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh')
 
     - name: Download package
@@ -178,6 +183,7 @@ jobs:
       with:
         name: OpenWrt_bin_${{ steps.compile.outputs.DEVICE_NAME }}_${{ steps.compile.outputs.FILE_DATE }}
         path: openwrt/bin
+        node-version: 16
 
     - name: Organize files
       id: organize
@@ -194,6 +200,7 @@ jobs:
       with:
         name: OpenWrt_firmware_${{ steps.compile.outputs.DEVICE_NAME }}_${{ steps.compile.outputs.FILE_DATE }}
         path: ${{ steps.organize.outputs.FIRMWARE }}
+        node-version: 16
         
     - name: Upload firmware to cowtransfer
       id: cowtransfer
@@ -222,6 +229,7 @@ jobs:
         [ $UPLOAD_COWTRANSFER = true ] && echo "🔗 [Cowtransfer](${{ steps.cowtransfer.outputs.url }})" >> release.txt
         [ $UPLOAD_WETRANSFER = true ] && echo "🔗 [WeTransfer](${{ steps.wetransfer.outputs.url }})" >> release.txt
         echo "::set-output name=status::success"
+    
     - name: Upload firmware to release
       uses: softprops/action-gh-release@v1
       if: steps.tag.outputs.status == 'success' && !cancelled()
@@ -231,12 +239,13 @@ jobs:
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
-
+        node-version: 16
     - name: Delete workflow runs
       uses: GitRML/delete-workflow-runs@main
       with:
         retain_days: 1
         keep_minimum_runs: 3
+        node-version: 16
 
     - name: Remove old Releases
       uses: dev-drprasad/delete-older-releases@v0.1.0
@@ -244,5 +253,6 @@ jobs:
       with:
         keep_latest: 3
         delete_tags: true
+        node-version: 16
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
