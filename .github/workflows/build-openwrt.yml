@@ -124,8 +124,6 @@ jobs:
 
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
-      with:
-                 node-version: 16
 
       if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh')
 
@@ -183,7 +181,6 @@ jobs:
       with:
         name: OpenWrt_bin_${{ steps.compile.outputs.DEVICE_NAME }}_${{ steps.compile.outputs.FILE_DATE }}
         path: openwrt/bin
-        node-version: 16
 
     - name: Organize files
       id: organize
@@ -200,7 +197,6 @@ jobs:
       with:
         name: OpenWrt_firmware_${{ steps.compile.outputs.DEVICE_NAME }}_${{ steps.compile.outputs.FILE_DATE }}
         path: ${{ steps.organize.outputs.FIRMWARE }}
-        node-version: 16
         
     - name: Upload firmware to cowtransfer
       id: cowtransfer
@@ -239,13 +235,11 @@ jobs:
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
-        node-version: 16
     - name: Delete workflow runs
       uses: GitRML/delete-workflow-runs@main
       with:
         retain_days: 1
         keep_minimum_runs: 3
-        node-version: 16
 
     - name: Remove old Releases
       uses: dev-drprasad/delete-older-releases@v0.1.0
@@ -253,6 +247,5 @@ jobs:
       with:
         keep_latest: 3
         delete_tags: true
-        node-version: 16
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
