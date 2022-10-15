@@ -57,13 +57,12 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-      with:
-                 node-version: 16
+    - name: Node LTS versions
+      uses: msimerson/node-lts-versions@v1.1.1
     - name: setup node version
       uses: actions/setup-node@v3
       with:
                  node-version: 16
-
     - name: update core package
       uses: actions/core@v3
       with:
