@@ -64,7 +64,7 @@ jobs:
       with:
                  node-version: 16
     - name: update core package
-      uses: actions/core@v2.298.2
+      uses: actions/core@main
       with:
                  node-version: 16
 
