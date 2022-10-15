@@ -63,10 +63,6 @@ jobs:
       uses: actions/setup-node@v3
       with:
                  node-version: 16
-    - name: update core package
-      uses: actions/core@main
-      with:
-                 node-version: 16
 
 
     - name: Set the value
