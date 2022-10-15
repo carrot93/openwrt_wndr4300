@@ -64,6 +64,20 @@ jobs:
       with:
                  node-version: 16
 
+    - name: update core package
+      uses: actions/core@v1.10.0
+      with:
+                 node-version: 16
+
+
+    - name: Set the value
+      id: step_one
+      run: |
+          # echo "{environment_variable_name}={value}" >> $GITHUB_ENV 
+          # echo "{name}={value}" >> $GITHUB_OUTPUT
+          echo '::set-output name=action_echo::disabled'
+
+
     - name: Initialization environment
       env:
         DEBIAN_FRONTEND: noninteractive
