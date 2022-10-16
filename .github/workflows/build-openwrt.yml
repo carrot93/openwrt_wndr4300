@@ -62,12 +62,12 @@ jobs:
     - name: Node LTS versions
       uses: msimerson/node-lts-versions@v1.1.1
       with:
-                 node-version: '16'
+                 node-version:  ['16']
       
     - name: setup node version
       uses: actions/setup-node@v1
       with:
-                 node-version: '16'
+                 node-version:  ['16']
 
 
     # - name: Set the value
