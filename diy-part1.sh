@@ -19,7 +19,7 @@ echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.defau
 # echo 'src-git jerryk https://github.com/jerrykuku/openwrt-package' >> feeds.conf.default
 # echo 'src-git dockerman https://github.com/lisaac/luci-app-dockerman.git' >> feeds.conf.default
 # echo 'src-git opentopd https://github.com/sirpdboy/sirpdboy-package' >> feeds.conf.default
-# echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
+echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 
 # Lienol/openwrt-package
 # sed -i '$a src-git lienol https://github.com/Lancenas/lienol-openwrt-package.git' feeds.conf.default
