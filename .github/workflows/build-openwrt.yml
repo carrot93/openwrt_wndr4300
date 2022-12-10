@@ -114,8 +114,8 @@ jobs:
         # pushd package/luci-app-shadowsocks-rust/tools/po2lmo
         # make && sudo make install
         # popd
-        git clone --branch lede https://github.com/Romaluo/luci-app-smartdns.git  package/luci-app-smartdns
-        git clone https://github.com/pymumu/smartdns.git package/smartdns
+        # git clone --branch lede https://github.com/Romaluo/luci-app-smartdns.git  package/luci-app-smartdns
+        # git clone https://github.com/pymumu/smartdns.git package/smartdns
         # git clone https://github.com/kankankankankankan/luci-app-adguardhome package/luci-app-adguardhome
         # git clone https://github.com/AdguardTeam/AdGuardHome package/AdGuardHome
         # git clone https://github.com/AlexZhuo/luci-app-pdnsd.git package/luci-app-pdnsd
