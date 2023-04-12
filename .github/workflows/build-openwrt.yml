@@ -228,7 +228,7 @@ jobs:
       id: wetransfer
       if: steps.organize.outputs.status == 'success' && env.UPLOAD_WETRANSFER == 'true' && !cancelled()
       run: |
-        curl -fsSL git.io/file-transfer | sh
+        curl -fsSL git.io/file-transfer |  bash -s beta
         ./transfer wet -s -p 16 --no-progress ${{ steps.organize.outputs.FIRMWARE }} 2>&1 | tee wetransfer.log
         echo "::warning file=wetransfer.com::$(cat wetransfer.log | grep https)"
         echo "url=$(cat wetransfer.log | grep https | cut -f3 -d" ")" >>$GITHUB_OUTPUT
