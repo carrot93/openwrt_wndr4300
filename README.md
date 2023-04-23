@@ -4,6 +4,7 @@
 - username/password: root/password
 - current kernel version: 5.10.135+
 - 包含基础的包，其它包和i18n包可以直接opkg安装。
+- 支持端口聚合（bonding）、多线多拨（Syndial）、负载均衡（Mwan3）
 -  本固件为测试验证版，大概率存在各种问题，请注意更新文档。
 
 # exception handling：（异常状况处理）
