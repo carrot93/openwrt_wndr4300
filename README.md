@@ -4,7 +4,7 @@
 - username/password: root/password
 - current kernel version: 5.10.135+
 - support Wireguard, virtual ip
-- support port bonding,Syndial,Mwnan3
+- support Link Aggregation ( bonding ) , Syndial , Mwnan3
 - 包含基础的包，其它包和i18n包可以直接opkg安装。
 - 支持Wireguard、Virtual IP
 - 支持端口聚合（bonding）、多线多拨（Syndial）、负载均衡（Mwan3）
