@@ -154,6 +154,8 @@ jobs:
         # ./scripts/diffconfig.sh > defconfig
         # cat defconfig >> .config
         sed -i 's/^[ \t]*//g' ./.config
+        cp .config config.uniq
+        sort .config.uniq | uniq > .config
         # cat >> .config <<EOF
         # CONFIG_PACKAGE_pdnsd=y
         # EOF
