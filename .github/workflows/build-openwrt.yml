@@ -62,7 +62,7 @@ jobs:
     - name: cli env
       uses: volta-cli/action@v4
     - name: Node LTS versions
-      uses: msimerson/node-lts-versions@v1.1.1
+      uses: msimerson/node-lts-versions@v1.5.1
       with:
                  node-version:  16
       
