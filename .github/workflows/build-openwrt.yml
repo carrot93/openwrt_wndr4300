@@ -66,7 +66,7 @@ jobs:
       with:
                  time: '60'
     - name: Node LTS versions
-      uses: msimerson/node-lts-versions@v1.5.1
+      uses: msimerson/node-lts-versions@v1.1.1
       with:
                  node-version:  16
     - name: setup node version
