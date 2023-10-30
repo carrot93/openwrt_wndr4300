@@ -57,23 +57,18 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id
 
     steps:
-    
     - name: Checkout
       uses: actions/checkout@v3
-    
     - name: cli env
       uses: volta-cli/action@v4
-    
     - name: wait 60s
       uses: GuillaumeFalourd/wait-sleep-action@v1
       with:
-          time: '60'
-    
+                 time: '60'
     - name: Node LTS versions
       uses: msimerson/node-lts-versions@v1.5.1
       with:
                  node-version:  16
-      
     - name: setup node version
       uses: actions/setup-node@v1
       with:
