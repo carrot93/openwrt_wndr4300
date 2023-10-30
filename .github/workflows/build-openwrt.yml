@@ -66,7 +66,7 @@ jobs:
     
     - name: wait 60s
       uses: GuillaumeFalourd/wait-sleep-action@v1
-       with:
+      with:
           time: '60'
     
     - name: Node LTS versions
