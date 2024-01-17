@@ -150,8 +150,8 @@ jobs:
       id: package
       run: |
         cd openwrt
-        sed -i 's/KERNEL_PATCHVER:=5.10/KERNEL_PATCHVER:=6.1/g' ./target/linux/ath79/Makefile
-        # sed -i 's/KERNEL_PATCHVER:=5.15/KERNEL_PATCHVER:=5.19/g' ./target/linux/ath79/Makefile
+        # sed -i 's/KERNEL_PATCHVER:=5.10/KERNEL_PATCHVER:=6.1/g' ./target/linux/ath79/Makefile
+        sed -i 's/KERNEL_PATCHVER:=5.10/KERNEL_PATCHVER:=5.19/g' ./target/linux/ath79/Makefile
         make clean
         # make savedefconfig
         # ./scripts/diffconfig.sh > defconfig
