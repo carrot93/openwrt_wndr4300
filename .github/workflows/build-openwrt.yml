@@ -247,8 +247,8 @@ jobs:
         # echo "name=release_tag::$(date +"%Y.%m.%d-%H%M")" >>$GITHUB_OUTPUT
         echo "::set-output name=release_tag::$(date +"%Y.%m.%d-%H%M")"
         touch release.txt
-        [ $UPLOAD_COWTRANSFER = true ] && echo "🔗 [Cowtransfer](${{ steps.cowtransfer.outputs.url }})" >> release.txt
-        [ $UPLOAD_WETRANSFER = true ] && echo "🔗 [WeTransfer](${{ steps.wetransfer.outputs.url }})" >> release.txt
+        [ $UPLOAD_CATTRANSFER = true ] && echo "🔗 [Cattransfer](${{ steps.cattransfer.outputs.url }})" >> release.txt
+        [ $UPLOAD_ANONTRANSFER = true ] && echo "🔗 [AnonTransfer](${{ steps.anontransfer.outputs.url }})" >> release.txt
         echo "status=success" >>$GITHUB_OUTPUT
     
     - name: Upload firmware to release
