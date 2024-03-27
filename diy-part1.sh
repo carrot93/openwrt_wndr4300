@@ -18,7 +18,7 @@
 # echo 'src-git helloworld https://github.com/fw876/helloworld.git' >> feeds.conf.default
 echo 'src-git helloworld https://github.com/fw876/helloworld.git;main' >>feeds.conf.default
 echo 'src-git clash https://github.com/chandelures/openwrt-clash.git' >> feeds.conf.default
-echo 'src-git luci-app-simple-clash https://github.com/chandelures/luci-app-simple-clash.git' >> feeds.conf.default
+echo 'src-git simpleclash https://github.com/chandelures/luci-app-simple-clash.git' >> feeds.conf.default
 # echo 'src-git small https://github.com/kenzok8/small' >> feeds.conf.default
 # echo 'src-git kenzo https://github.com/kenzok8/openwrt-packages' >> feeds.conf.default
 # echo 'src-git jerryk https://github.com/jerrykuku/openwrt-package' >> feeds.conf.default
