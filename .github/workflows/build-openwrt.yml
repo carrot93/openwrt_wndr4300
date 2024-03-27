@@ -124,7 +124,7 @@ jobs:
         # git clone https://github.com/AlexZhuo/luci-app-pdnsd.git package/luci-app-pdnsd
         # git clone https://github.com/mengskysama/openwrt-pdnsd.git package/openwrt-pdnsd 
         git clone https://github.com/chandelures/openwrt-clash packages/clash
-        git clone https://github.com/chandelures/luci-app-simple-clash luci/Applications/simpleclash
+        git clone https://github.com/chandelures/luci-app-simple-clash luci/applications/net/luci-app-simple-clash
         ../$DIY_P1_SH
         # rm -rf feeds/luci/applications/luci-app-turboacc
         # git clone https://github.com/AutoCONFIG/luci-app-turboacc.git feeds/luci/applications/luci-app-turboacc
