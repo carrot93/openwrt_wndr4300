@@ -103,7 +103,7 @@ jobs:
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
         chmod +x $DIY_P1_SH
-        cd openwrt
+        cd openwrt/feeds/
         # custom package source
         # cat >> feeds.conf.default <<EOF
         # src-git packages_1 https://github.com/openwrt/packages
@@ -123,8 +123,8 @@ jobs:
         # git clone https://github.com/AdguardTeam/AdGuardHome package/AdGuardHome
         # git clone https://github.com/AlexZhuo/luci-app-pdnsd.git package/luci-app-pdnsd
         # git clone https://github.com/mengskysama/openwrt-pdnsd.git package/openwrt-pdnsd 
-         git clone https://github.com/chandelures/openwrt-clash package/clash
-         git clone https://github.com/chandelures/luci-app-simple-clash package/simpleclash
+        git clone https://github.com/chandelures/openwrt-clash packages/clash
+        git clone https://github.com/chandelures/luci-app-simple-clash luci/Applications/simpleclash
         ../$DIY_P1_SH
         # rm -rf feeds/luci/applications/luci-app-turboacc
         # git clone https://github.com/AutoCONFIG/luci-app-turboacc.git feeds/luci/applications/luci-app-turboacc
