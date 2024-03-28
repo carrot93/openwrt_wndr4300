@@ -17,14 +17,20 @@
 # echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 # echo 'src-git helloworld https://github.com/fw876/helloworld.git' >> feeds.conf.default
 echo 'src-git helloworld https://github.com/fw876/helloworld.git;main' >>feeds.conf.default
-echo "src-link clash `pwd`/packages/clash" >> feeds.conf.default
-echo "src-link simpleclash `pwd`/luci/applications/luci-app-simple-clash" >> feeds.conf.default
+echo "src-link clash  clash" >> feeds.conf.default
+echo "src-link simpleclash luci-app-simple-clash" >> feeds.conf.default
 # echo 'src-git small https://github.com/kenzok8/small' >> feeds.conf.default
 # echo 'src-git kenzo https://github.com/kenzok8/openwrt-packages' >> feeds.conf.default
 # echo 'src-git jerryk https://github.com/jerrykuku/openwrt-package' >> feeds.conf.default
 # echo 'src-git dockerman https://github.com/lisaac/luci-app-dockerman.git' >> feeds.conf.default
 # echo 'src-git opentopd https://github.com/sirpdboy/sirpdboy-package' >> feeds.conf.default
 # echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
+
+./scripts/feeds update clash
+./scripts/feeds install -a -f -p clash
+./scripts/feeds update simpleclash
+./scripts/feeds install -a -f -p simpleclash
+
 
 # Lienol/openwrt-package
 # sed -i '$a src-git lienol https://github.com/Lancenas/lienol-openwrt-package.git' feeds.conf.default
