@@ -132,8 +132,11 @@ jobs:
         # git clone https://github.com/AutoCONFIG/luci-app-turboacc.git feeds/luci/applications/luci-app-turboacc
 
     - name: Update feeds
-      run: cd openwrt && ./scripts/feeds update -a
-
+      run: | 
+         cd openwrt && ./scripts/feeds update -a
+         sed -i 's/Dreamacro/BackupTime/g' package/openwrt-clash/Makefile
+         sed -i 's/dreamacro/chmod777john/g' package/openwrt-clash/Makefile
+         
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
 
